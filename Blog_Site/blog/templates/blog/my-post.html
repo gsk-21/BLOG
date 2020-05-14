@@ -1,0 +1,74 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+
+</head>
+
+<br><br><br><br>
+
+{% if not posts.count %}
+
+<br><br><br>
+<div class ="container">
+    <div class="alert alert-custom alert-no-post">
+        <br><br>
+        <strong class="no-notificatons" >You have not posted anything</strong>
+        <br><br><br>
+      </div>
+      <br><br>
+      <center>
+        <a  href="{% url 'create-post' %}" class="btn btn-primary add-new-post" id="save">ADD NEW POST</a>
+      </center>
+
+</div>
+
+
+{% else %}
+
+<div class="container my-post-container">
+
+		<div class="container ">
+			<header class="your-post" >MY POSTS</header>
+		</div>
+
+
+<br>
+
+    {% for post in posts %}
+
+    {% if  post.published_date  is not None %}
+
+    <div class="rows row-content title ">
+        <div class="col-auto">
+            <a href="{{ post.id }}" class="title my-post-title"> {{ post.title | upper }}</a>
+            <hr />
+        </div>
+    </div>
+
+    <div class="container">
+        <p class="author">
+            <span class="author-heading my-post-author-heading">AUTHOR :</span>
+            <span class="author-name my-post-author-name">{{ post.author.first_name | upper }}</span>
+            <span class="post-list-date">
+                {{ post.published_date | date:'d M Y ' }}
+            </span>
+        </p>
+
+        <p class="text my-post-text">
+            {{ post.text |safe| slice:":300" }} 
+            <span><a href="{{post.id}}">...<span class="read-more">Read more</span></span>
+        </p>
+    </div>
+    <br>
+    {% endif%}
+
+    {% endfor %}
+
+</div>
+
+
+{% endif %}
+
+{% endblock %}

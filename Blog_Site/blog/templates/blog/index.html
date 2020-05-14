@@ -1,0 +1,56 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+
+</head>
+
+
+
+
+<div class="whole-container home-container">
+    <div class="container container-custom">
+
+        {% for post in posts %}
+    
+        {% if  post.published_date  is not None %}
+    
+        <div class="rows row-content title">
+            <div class="col-12">
+                <a href="{{post.id}}" class="title"> {{ post.title | upper }}</a>
+                <hr />
+            </div>
+        </div>
+    
+        <div class="container-custom">
+            <p class="author">
+                <span class="author-heading">AUTHOR :</span>
+                <span class="author-name">
+                    {{ post.author.first_name | upper }}
+                </span>
+                <span class="post-list-date">
+                    {{ post.published_date | date:'d M Y ' }}
+                </span>
+            </p>
+    
+            <p class="text">
+                {{ post.text |striptags| slice:":220" }}<span><a 
+                    href="{% url 'public-post-detail' pk=post.pk  %}">...<span 
+                    class="read-more">Read more
+                </span>  </a></span>
+            </p>
+        </div>
+        <br>
+        {% endif%}
+    
+        {% endfor %}
+    
+    
+    
+    </div>
+</div>
+
+
+{% endblock %}

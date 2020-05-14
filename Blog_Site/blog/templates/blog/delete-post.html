@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<br><br><br><br><br><br>
+<div class="container">
+
+	<form method="POST">
+
+
+		{% csrf_token %}
+		<div class="container container-custom ">
+			<h3 class="delete-post">
+				Do you want to delete the post with the title <br><br>
+				 <span class="post-to-delete-title"> '{{ post_to_delete | upper}}' </span>?
+			</h3>
+		</div>
+		<br>
+
+		<div class="btn-row">
+			<p class="delete-button" >
+				<button class="btn btn-danger post-del-icon" type="submit" style="font-weight: bold;" ><i class="fa fa-remove fa-del-icon"></i>
+					 <span class="del-btn"> DELETE</span> </button>
+			</p>
+	
+	
+			<p class="cancel-button" >
+				<a class="btn btn-primary del-icon post-cancel-icon" href="{% url 'post-detail' pk=post_to_delete.id %}" style="font-weight: bold;"> 
+				<span class="cancel-btn">CANCEL</span> </a>
+			</p>
+		</div>
+
+		<!-- <a href="{% url 'post-detail' pk=post_to_delete.id %}">CANCEL</a> -->
+
+	</form>
+
+
+</div>
+
+{% endblock %}

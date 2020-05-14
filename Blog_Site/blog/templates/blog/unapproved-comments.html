@@ -1,0 +1,83 @@
+{% extends 'blog/base.html'%}
+
+{% block content %}
+
+<br><br><br>
+
+
+
+{% if not comments.count %}
+
+<br><br>
+
+
+<br><br>
+<div class ="container">
+    <div class="alert alert-custom alert-no-notification">
+        <br>
+        <strong class="no-notificatons">No Notifications</strong>
+        <br><br>
+        <strong class="no-notificatons">You will be notified when someone comments on your post</strong>
+        <br><br>
+      </div>
+</div>
+
+
+
+
+{% else %}
+
+    {% for cmt in comments %}
+    <br>
+
+    <div class="container unapproved-comments-container">
+
+        <div class="rows row-content ">
+            <div class="col-12">
+                <a href="{{cmt.post.id}}" class="unapproved-cmt-title">
+                    <span class="unapproved-cmt-title-left"></span>  {{ cmt.post  | upper }}</a>
+                <hr />
+            </div>
+        </div>
+        <div class="container">
+
+            <p class="author">
+                <span class="author-heading unapproved-comment-author-heading">Comment by :</span>
+                <span class="author-name unapproved-comment-author-name"> {{ cmt.author.first_name |title }} {{cmt.author.last_name |title }}
+                </span>
+                <span class="post-list-date unapproved-comment-date">
+                    {{ cmt.created_date | date:'d M Y ' }}
+                </span>
+            </p>
+
+        <p class="text unapproved-comment-text">
+            {{ cmt  }}
+        </p>
+
+
+
+        <div class="container un-app-rem">
+
+                <a href="{% url 'approve-comment' pk=cmt.pk %}?from=notification"
+                class=" btn btn-success un-approve-comment" id=""> <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                Approve </a>
+
+                <a href="{% url 'delete-comment' pk=cmt.pk %}?from=notification" 
+                class="btn btn-danger un-remove-comment" id=""><span><i class="fas fa-times" ></i></span>
+                Remove</a>
+
+        </div>
+<br><br>
+        </div>
+
+    </div>
+
+
+    {% endfor %}
+
+{% endif %}
+
+</div>
+
+
+{% endblock %} 

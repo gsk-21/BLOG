@@ -1,0 +1,186 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<br><br><br><br>
+<!-- COMMENTS -->
+<!-- COMMENTS -->
+<div class="containers">
+
+
+
+	{% if post.comments.all.count %}
+
+	<div class="container">
+		<div class="rows row-content ">
+			<div class="col-12">
+				<a class="cmt-head comment-list-head" href="{% url 'public-post-detail' pk=post.pk %}">{{post}} </a>
+				<hr />
+			</div>
+		</div>
+	</div>
+
+	{% else %}
+	<div class="alert alert-custom no-comments" style="box-shadow: none;">
+		<br><br>
+		<strong class="no-comments" >No Comments for this post</strong>
+		<br><br><br>
+	   </div>
+
+	{% endif %}
+
+
+
+	{% for comment in post.comments.all %}
+
+	<div class="container">
+		<p>
+
+
+			{% if  forloop.counter != post.comments.all.count%}
+
+			{% if  comment.approved_comment %}
+			<div class="container comment-list-container">
+				<p class="author">
+					<span class="author-heading comment-list-author">Comment by :</span>
+					<span class="author-name comment-list-author-name">
+						{{comment.author.first_name |title }} {{comment.author.last_name |title }}
+					</span>
+					<span class="post-list-date comment-list-date">
+						{{ comment.created_date | date:'d M Y ' }}
+					</span>
+				</p>
+
+				<div class=" cmt-text comment-list-text">{{ comment | safe | linebreaks }} </div>
+
+				<p class='approved-comment comment-list-approved'>
+					<span><i class="fas fa-check" style="color: #00c851"></i> </span>
+					Approved Comment
+
+					<a href="{% url 'delete-comment' pk=comment.pk %}" class="btn btn-danger comment-list-remove"
+						id="un-remove-comment"><span><i class="fas fa-times"></i></span>
+						Remove</a>
+				</p>
+				<br>
+			</div>
+
+			<div class="rows row-content ">
+				<div class="col-12">
+
+					<hr />
+				</div>
+			</div>
+
+			{% else %}
+
+			<div class="container comment-list-container">
+				<p class="author">
+					<span class="author-heading comment-list-author">Comment by :</span>
+					<span class="author-name comment-list-author-name">
+						{{comment.author.first_name |title }} {{comment.author.last_name |title }}
+					</span>
+					<span class="post-list-date comment-list-date">
+						{{ comment.created_date | date:'d M Y ' }}
+					</span>
+				</p>
+
+				<div class=" cmt-text">{{ comment | safe | linebreaks }} </div>
+
+
+				<div class="container un-app-rem">
+
+					<a href="{% url 'delete-comment' pk=comment.pk %}" class="btn btn-danger comment-list-remove"
+						id="un-remove-comment"><span><i class="fas fa-times"></i></span>
+						Remove</a>
+
+					<a href="{% url 'approve-comment' pk=comment.pk %}" class=" btn btn-success comment-list-approve"
+						id=un-approve-comment> <span><i class="fa fa-check" aria-hidden="true"></i></span>
+						Approve </a>
+
+				</div>
+
+				<br><br>
+			</div>
+
+			<div class="rows row-content ">
+				<div class="col-12">
+
+					<hr />
+				</div>
+			</div>
+
+			{% endif %}
+
+			{% else %}
+
+
+			{% if  comment.approved_comment %}
+			<div class="container comment-list-container">
+				<p class="author">
+					<span class="author-heading comment-list-author">Comment by :</span>
+					<span class="author-name comment-list-author-name">
+						{{comment.author.first_name |title }} {{comment.author.last_name |title }}
+					</span>
+					<span class="post-list-date comment-list-date">
+						{{ comment.created_date | date:'d M Y ' }}
+					</span>
+				</p>
+
+				<div class=" cmt-text comment-list-text">{{ comment | safe | linebreaks }} </div>
+
+				<p class='approved-comment comment-list-approved'>
+					<span><i class="fas fa-check" style="color: #00c851"></i> </span>
+					Approved Comment
+
+					<a href="{% url 'delete-comment' pk=comment.pk %}" class="btn btn-danger comment-list-remove"
+						id="un-remove-comment"><span><i class="fas fa-times"></i></span>
+						Remove</a>
+				</p>
+				<br>
+			</div>
+
+			{% else %}
+
+			<div class="container comment-list-container">
+				<p class="author">
+					<span class="author-heading comment-list-author">Comment by :</span>
+					<span class="author-name comment-list-author-name">
+						{{comment.author.first_name |title }} {{comment.author.last_name |title }}
+					</span>
+					<span class="post-list-date comment-list-date">
+						{{ comment.created_date | date:'d M Y ' }}
+					</span>
+				</p>
+
+				<div class=" cmt-text">{{ comment | safe | linebreaks }} </div>
+
+
+				<div class="container un-app-rem">
+
+					<a href="{% url 'delete-comment' pk=comment.pk %}" class="btn btn-danger comment-list-remove"
+						id="un-remove-comment"><span><i class="fas fa-times"></i></span>
+						Remove</a>
+
+					<a href="{% url 'approve-comment' pk=comment.pk %}" class=" btn btn-success comment-list-approve"
+						id=un-approve-comment> <span><i class="fa fa-check" aria-hidden="true"></i></span>
+						Approve </a>
+
+				</div>
+
+				<br><br>
+			</div>
+			{% endif %}
+
+			{% endif %}
+
+		</p>
+	</div>
+
+
+	{%endfor%}
+
+
+	<br><br><br>
+
+</div>
+
+{% endblock %}

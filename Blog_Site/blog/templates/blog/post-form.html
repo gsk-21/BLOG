@@ -1,0 +1,67 @@
+{% extends 'blog/base.html' %}
+
+{% block content%}
+
+<div class="container container-post-detail post-form-container">
+
+<form method="POST">
+
+		{% csrf_token %}
+		<div class="col-10">
+			<h2 class="post-form-heading">CREATE YOUR BLOG</h2>
+			<hr />
+		</div>
+		<div class="row row-content container-post-detail">
+
+			<div class="col-md-10">
+				<form>
+					<br>
+
+					<div class="form-group row">
+						<label class="col-md-2 col-form-label form-left"> TITLE </label>
+						<div class="col-md-10">
+							<p>
+								{{ form.title}}
+							</p>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-md-2 col-form-label form-left" >CONTENT</label>
+						<div class="col-md-10">
+							<p id="edit" >
+								{{form.text}}
+							</p>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-md-2 col-form-label form-left"> </label>
+						<div class="col-md-10">
+							<p>
+								<button type="submit" class="btn btn-custom save save-as-draft" id="save" name="save">SAVE AS DRAFT</button>
+								<span>
+									<button type="submit" class="btn btn-success post-form-publish"  name="publish" id="save"><i class="fas fa-check"></i>
+										PUBLISH</button>
+									</span>
+			
+							</p>
+						</div>
+					</div>
+
+
+
+				</form>
+			</div>
+		</div>
+
+</div>
+
+</form>
+
+</div>
+
+
+
+{% endblock %}
+

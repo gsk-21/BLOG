@@ -1,0 +1,48 @@
+{% extends 'blog/base.html' %}
+
+{% block content%}
+
+<div class="container container-post-detail comment-form-container">
+
+    <!-- <br> -->
+
+    <div class="row row-content">
+        <div class="col-10">
+            <h2 class="add-cmt-heading">{{ post }}</h2>
+            <hr />
+        </div>
+        <div class="col-md-10">
+            <br>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label form-left comment-form-left"> COMMENT</label>
+                    <div class="col-md-10">
+                        <p>
+                            {{form.text}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="offset-md-2 col-md-10">
+                        <button type="submit" class="btn btn-primary save add-comment-button" id="save">Add Comment</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<br><br>
+
+    <p class="cmt-instruction alert alert-success">Your comment will be made public once the author of this post approves it.</p>
+
+
+
+</div>
+
+
+
+{% endblock %}

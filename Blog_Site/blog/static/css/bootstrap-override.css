@@ -1,0 +1,91 @@
+@media (max-width: 1000px){
+	#mymenu{
+
+	}
+	#nav-right{
+
+	 }
+	.container
+	{ 
+	    min-width: 910px;
+
+
+    } 
+    .container-custom{
+	margin-bottom: 8%;
+	}
+
+	.save-as-draft{
+		background-color: red;
+	}
+	.login-row{
+
+
+	}
+	.container-draft-detail{
+
+
+	}
+}
+
+
+/* ####################################### DESKTOP ############################################# */
+
+@media (min-width: 1281px),
+(min-width: 1025px) and (max-width: 1280px),
+(min-width: 768px) and (max-width: 1024px) and (orientation: landscape),
+(min-width: 481px) and (max-width: 767px),
+(min-width: 320px) and (max-width: 480px){
+	.container
+	{ 
+
+		min-width: 75vw;
+
+    } 
+
+    #nav0{
+	display: block;
+	background-color: white;
+	color: #4285f4;
+}
+
+
+    .container-custom{
+
+	}
+	.navbar-custom{
+
+	}
+	.nav-container{
+		min-width:90vw;
+		font-weight: bold;
+		color: #4285f4 !important;
+	}
+	#navbar-heading{
+		font-size: 2rem !important;
+		color: #4285f4 !important;
+
+	}
+	.form-control-custom{
+
+	}
+
+	.comment-text{
+
+		height: 10rem !important;
+
+	}
+	.add-comment-button{
+		margin-left: 75% !important;
+	}
+
+	.login-input{
+
+	}
+
+
+
+}
+
+
+

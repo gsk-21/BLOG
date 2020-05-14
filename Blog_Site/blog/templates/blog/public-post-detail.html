@@ -1,0 +1,118 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+<head>
+
+
+	<link rel="stylesheet" href="{% static 'css/post-detail.css'%}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+
+{% block content %}
+
+
+<div class="container container-post-detail ">
+
+	<div class="rows row-content post-title " >
+		<div class="col-12" >
+			<p class="post-title"> {{ post.title | upper }}</p>
+			<hr />
+		</div>
+	</div>
+
+	<div class="container">
+
+		<p class="author" >
+			<span class="post-author-heading">Author :</span>
+			<span class="post-author-name">{{ post.author.first_name | title }} {{ post.author.last_name | title }}</span>
+		</p>
+
+		<p class="date" >
+			<span class="post-date-heading">Published on :</span>
+			<span class="post-date">{{ post.published_date | date:" d M Y" }}</span>
+		</p>
+
+		<div class="row container public-text-area">
+			<div class="post-text">
+
+				{{ post.text | safe | linebreaks }}
+			</div>
+		</div>
+
+		<br>
+		<!-- {{ post.comments.all }} -->
+	</div>
+<!-- COMMENTS -->
+
+<div class="rows row-content post-title " >
+	<div class="col-6" >
+		<p class="cmt-head"> COMMENTS</p>
+		<hr />
+	</div>
+</div>
+
+
+	<div class="container"> 
+		<!-- <p class="cmt-head">COMMENTS</p> -->
+			
+		{% for comment in post.comments.all %}
+
+			<div class="container">
+				<p>
+					<!-- {{forloop.counter}}
+					{{ post.comments.all.count }} -->
+				{% if  comment.approved_comment %}
+
+					{% if  forloop.counter != post.comments.all.count%}
+
+						<div class="col-auto" >
+							<span class="cmt-author">{{ comment.author.first_name | title }} {{ comment.author.last_name | title }}</span>,
+							<span class="cmt-date">{{ comment.created_date | date:" d M Y" }}</span>	
+							<br>
+							<div class=" cmt-text">{{ comment | safe | linebreaks }}</div>
+							<hr />
+						</div>
+
+					{% else %}
+
+					<div class="col-auto" >
+						<span class="cmt-author">{{ comment.author.first_name | title }} {{ comment.author.last_name | title }}</span>,
+						<span class="cmt-date">{{ comment.created_date | date:" d M Y" }}</span>	
+						<br>
+						<div class=" cmt-text">{{ comment | safe | linebreaks }}</div>
+
+					</div>
+
+					{% endif %}
+				{% endif %}
+
+				</p>
+			</div>
+
+		{%endfor%}
+<br>
+		{% if user.is_authenticated %}
+
+			<p class="add-cmt"><a href="{% url 'add-comment' pk=post.pk %}?pk={{post.pk}}">
+				<i class="fa fa-plus-circle" aria-hidden="true" ></i> Add comment</a></p>
+		
+		{% else %}
+
+
+			<p class="add-cmt">
+				<a href="{% url 'login' %}">
+				<i class="fa fa-plus-circle" aria-hidden="true" ></i> Add comment</a>
+			</p>
+
+
+		{% endif %}
+	<br><br><br>
+
+	</div>
+
+</div>
+
+
+
+{% endblock %}

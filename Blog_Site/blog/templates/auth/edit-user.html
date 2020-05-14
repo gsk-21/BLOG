@@ -1,0 +1,86 @@
+{% extends 'blog/base.html'%}
+
+{% block content %}
+
+<br><br><br><br><br><br>
+<form method="POST" action="{% url 'edit-user' %}">
+    {% csrf_token %}
+
+
+
+
+    
+        <div class="login-row">
+
+                <div class="col-auto update-head-container" >
+                    <h2 class="heading update-heading" >UPDATE PERSONAL INFO</h2>
+                    <hr/>
+                </div>
+     
+
+    <div class="form-group row">
+        <label class="col-md-2 col-form-label form-left update-left">FIRST NAME</label>
+        <div class="col-md-10">
+            <p class="login-username-input"> 
+
+                <input type="text" placeholder="Enter new first name" name="first_name"
+                class="form-control form-control-custom update-input" id="form-control-custom">
+
+            </p>
+        </div>
+    </div>
+
+
+
+    <div class="form-group row">
+        <label class="col-md-2 col-form-label form-left update-left">LAST NAME</label>
+        <div class="col-md-10">
+            <p class="login-username-input"> 
+
+                <input type="text" placeholder="Enter new last name" name="last_name"
+                class="form-control form-control-custom update-input" id="form-control-custom">
+
+            </p>
+        </div>
+    </div>
+
+
+
+    <div class="form-group row">
+        <label class="col-md-2 col-form-label form-left update-left ">PASSWORD</label>
+        <div class="col-md-10">
+            <p class="login-pwd-input"> 
+                <input type="password" placeholder="Enter Password" name="pwd" 
+                class="form-control form-control-custom update-input" id="form-control-custom">
+            </p>
+        </div>
+    </div>
+
+    
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="update-button" >UPDATE</button>
+
+        {% if warning %}
+        <br>
+        <center>
+        
+                <div class="login-error-container">
+        
+                    <div class="col-md-5" >
+                        <div class="alert alert-danger login-alert" role="alert">
+                            <strong style="font-weight: bold;">{{ warning |escape| title }}</strong>
+                        </div>
+                    </div>
+                </div>
+        
+        </center>
+        
+                <br>
+        
+            {% endif %}
+
+
+</form>
+
+{% endblock%}

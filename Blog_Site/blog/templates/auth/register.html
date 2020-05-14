@@ -1,0 +1,146 @@
+{% extends 'blog/base.html'%}
+
+{% block content %}
+
+
+
+    <br><br><br>
+
+    {% if  registered %}
+
+    <div class="containers" >
+
+    <div class="sign-success alert alert-primary alert-custom" >YOU SIGNED UP SUCCESSFULLY!</div>
+            <br><br>
+        <center>
+            <a  href="{% url 'login' %}" class="btn btn-outline-primary" id="signed-login">LOGIN</a>
+        </center>
+
+    </div>
+
+    {% else %}
+
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+    <div class="signup-row" >
+        <div class="col-auto signup-head-container" >
+                <h2 class="heading signup-heading" >SIGN UP</h2>
+
+    </div>
+         
+
+
+     {% if form.errors%}
+     <br>
+
+             <div class="login-error-container">
+                 <div class="col-md-5" >
+                    {% for field in form %}
+                    {% for error in field.errors %}
+                    <div class="alert alert-danger signup-alert" role="alert">
+                            <strong style="font-weight: bold;">{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                 </div>
+             </div>
+<br>
+     
+      {% endif %}
+
+    
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label form-left signup-left">USERNAME</label>
+            <div class="col-md-10">
+                <p class="signup-input"> 
+                    {{ form.username}}
+                </p>
+            </div>
+        </div>
+    
+
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label form-left signup-left">FIRST NAME</label>
+            <div class="col-md-10">
+                <p class="signup-input""> 
+                    {{ form.first_name }}
+                </p>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label form-left signup-left">LAST NAME</label>
+            <div class="col-md-10">
+                <p class="signup-input"> 
+                    {{ form.last_name }}
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label form-left signup-left">E-MAIL</label>
+            <div class="col-md-10">
+                <p class="signup-input"> 
+                    {{form.email}}
+                </p>
+            </div>
+        </div>
+
+
+
+
+        {% if form.errors%}
+        <br>
+    
+                <div class="login-error-container">
+                    <div class="col-md-5" >
+                        {% for error in form.non_field_errors %}
+                        <div class="alert alert-danger signup-alert" role="alert">
+                            <strong style="font-weight: bold;">{{ error|escape }}</strong>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+    <br>
+        
+         {% endif %}
+    
+
+
+
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label form-left signup-left">PASSWORD</label>
+            <div class="col-md-10">
+                <p class="signup-input"> 
+                    {{form.password}}
+                </p>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label form-left signup-left">CONFIRM PASSWORD</label>
+            <div class="col-md-10">
+                <p class="signup-input"> 
+                    {{form.confirm_password}}
+                </p>
+            </div>
+        </div>
+        
+            </div>
+    
+    
+
+                    <button type="submit" class="btn btn-primary" id="signup-button">SUBMIT</button>
+
+
+
+    
+    </form>
+
+    {% endif %}
+
+{% endblock%}

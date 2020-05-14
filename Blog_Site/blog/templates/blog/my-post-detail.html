@@ -1,0 +1,113 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+<head>
+
+
+	<link rel="stylesheet" href="{% static 'css/post-detail.css'%}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+
+{% block content %}
+
+
+<div class="container container-custom my-post-detail-container">
+
+	<!-- style="position: fixed;" -->
+
+	<div class="rows row-content my-post-detail-title-container" >
+		<div class="col-auto" >
+			<p class="my-post-detail-title"> {{ post.title | upper }}</p>
+			<hr />
+		</div>
+	</div>
+
+
+
+	<div class="container">
+
+
+		{% if  post.published_date  is None %}
+
+		<!-- style="position: fixed;margin-top: 1%;margin-bottom: 1%;" -->
+		<p class="date" >
+			<span class="my-post-detail-date-heading">Created On :</span>
+			<span class="my-post-detail-post-date">{{ post.created_date | date:" d M Y" }}</span>
+		</p>
+
+		{% else %}
+
+		<!-- style="position: fixed;margin-top: 1%;margin-bottom: 1%;" -->
+		<p class="date" >
+			<span class="my-post-detail-date-heading">Published On :</span>
+			<span class="my-post-detail-post-date">{{ post.published_date | date:" d M Y" }}</span>
+		</p>
+
+		{% endif %}
+
+
+		<div class="row container text-area my-post-detail-textarea">
+			<div class="post-text" >
+
+		{{ post.text | safe | linebreaks  }} 
+
+			</div>
+		</div>
+
+
+		<p class="up-nd-del">
+
+			{% if  post.published_date  is None %}
+
+			<a class="btn btn-success my-post-detail-publish"  href="{% url 'publish-post' pk=post.pk %}" id="save" style="float: right;">
+				<i class="fas fa-check"></i>  PUBLISH</a>
+
+			<a href="{% url 'update-post' pk=post.pk %}?pk={{post.pk}}" class="btn btn-primary my-post-detail-edit"  id="draft-edit"
+			style="font-weight: bold;float: right;"><i
+			class="fas fa-pencil-alt" ></i> <span class="cancel-btn">EDIT</span> </a>
+
+			<a href="{% url 'delete-post' pk=post.pk %}" class="btn btn-danger del-icon my-post-detail-delete" id="un-remove-comment" ><i
+				class="fas fa-remove"></i>  <span class="del-btn" > DELETE</span></a>
+
+			{% else %}
+
+			<a href="{% url 'update-post' pk=post.pk %}?pk={{post.pk}}" class="btn btn-primary my-post-detail-edit"  id="draft-edit"
+			><i
+			class="fas fa-pencil-alt" ></i> <span class="cancel-btn">EDIT</span> </a>
+
+			<a href="{% url 'delete-post' pk=post.pk %}" class="btn btn-danger del-icon my-post-detail-delete" id="un-remove-comment"
+			 ><i
+				class="fas fa-remove"></i>  <span class="del-btn" > DELETE</span></a>
+
+			{% endif %}
+
+
+			{% ifequal post.comments.count 1 %}
+
+				<div class="container comment-button">
+					<a href="{% url 'comment-list' pk=post.pk %}?pk={{post.pk}}" class="btn btn-primary my-post-detail-comments"
+					id="cmt-edit"> {{post.comments.count}} COMMENT</a>
+				</div>
+			
+			{% endifequal %}
+
+			{%if post.comments.count > 1%}
+
+			<div class="container comment-button">
+				<a href="{% url 'comment-list' pk=post.pk %}?pk={{post.pk}}" class="btn btn-primary my-post-detail-comments"
+				id="cmt-edit"> {{post.comments.count}} COMMENTS</a>
+			</div>
+
+			{% endif %}
+
+		</p>
+
+	</div>
+
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+
+</head>
+
+
+
+<br><br><br>
+
+{% if drafts.count  %}
+
+<div class="container container-draft-detail" style="top: -1000px !important;">
+		<div class="container " id="draft-list">
+			<header class="your-draft-list" >DRAFT LIST</header>
+		</div>
+
+
+
+
+	{% for draft in drafts %}
+
+		{% if  draft.published_date  is  None %}
+		<div class="container draft-container" >
+			<br>
+			<div class="rows row-content title">
+				<div class="col-12">
+					<a href="{% url 'post-detail' pk=draft.id %}" class="title draft-title"> {{ draft.title | upper }}</a>
+					<hr />
+				</div>
+			</div>
+
+
+				<p class="date" >
+					<span class="post-date-heading draft-created-on">Created On :</span>
+					<span class="post-date draft-date">{{ draft.created_date | date:" d M Y" }}</span>
+				</p>
+
+				<p class="text draft-text">
+
+					{{ draft.text |striptags|slice:":150" }} . . .
+				</p>
+
+
+				<div class="up-nd-dels" id="up-nd-dels" >
+
+					<a class="btn btn-success draft-publish" href="{% url 'publish-post' pk=draft.pk %}"
+					id="un-approve-comment">
+						<i class="fas fa-check"></i> PUBLISH</a>
+
+					<a href="{% url 'delete-post' pk=draft.pk %}?from=draft" class="btn btn-danger draft-delete" id="un-remove-comment" ><i
+							class="fas fa-remove"></i> DELETE</a>
+		
+					<a href="{% url 'update-post' pk=draft.pk %}?from=draft" class="btn btn-primary draft-edit"  id="draft-edit" name="draft"
+					style="font-weight: bold;float: right;"><i
+							class="fas fa-edit" ></i> EDIT</a>
+		
+							
+					</div>
+<br>
+
+
+
+
+				
+			</div>
+		{% endif %}
+
+		{% if draft.published_date  is not None  and  forloop.counter == drafts.count %}
+			<center>
+				<h1 id="no-cmt"> NO DRAFTS</h1>
+			</center>
+		{% endif %}
+
+
+
+	{% endfor %}
+
+
+
+
+</div>
+
+{% else %}
+<div class ="container container-no-drafts">
+
+	<div class="alert alert-custom alert-no-drafts" style="box-shadow: none;">
+	    <br><br>
+	    <strong class="no-notificatons" >You have not saved any drafts</strong>
+	    <br><br><br>
+	  </div>
+	  <br><br>
+
+ </div>
+{% endif %}
+
+{% endblock %}

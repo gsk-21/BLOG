@@ -1,0 +1,886 @@
+/* 
+#############################################################################################
+##################################### MOBILE  #################################################
+############################################################################################# */
+/* 
+@media only screen and (max-width: 1000px) {
+
+
+@media only screen and (max-width: 480px)
+@media screen and (orientation: portrait) 
+@media screen and (min-width:240px) and (max-width:480px), 
+   screen and (min-device-width:240px) and (max-device-width:480px)
+
+   @media (min-width: 768px) and (max-width: 1024px)
+
+*/
+@media screen and (min-device-width:240px) and (max-device-width:480px){
+
+	body{
+		 background: whitesmoke !important ; 
+		 background-color: white !important;
+
+		 font-size: 67.5% !important;
+		 font-family: 'Ubuntu', sans-serif;
+		font-family: 'PT Sans', sans-serif;
+
+	 }
+	 #nav0{
+		display: none;
+	}
+
+	 #nav1,#nav2{
+		 display: block;
+	 }
+	 #nav1{
+		background-color: #4285f4;
+		border-bottom-left-radius: 0rem;
+		border-bottom-right-radius: 0rem;
+		/* border-radius: 5rem; */
+	}
+	 #nav2{
+
+		outline: thick;
+		 margin-top: .2%;
+		 padding-top: 3%;
+		padding-bottom: 3%;
+
+		color: #4285f4;
+		background-color: white;
+	 }
+
+	 .navbar-custom{
+
+		box-shadow: none;
+	 }
+	 #navbar-brand-custom{
+		 color: white;
+		 color: #4285f4;
+
+
+		 font-family: 'Lora', serif;
+		 font-family: 'Ubuntu', sans-serif;
+		 font-family: 'PT Sans', sans-serif;
+		 font-size: 2.1rem;
+		margin-left: 0%;
+	 }
+
+	 #navbar-heading{
+		color: white;
+		color: #3a3c3f;
+		font-size: 5rem;
+	    margin-left: 35%;
+	    font-weight: bold;	
+	    text-align: center;
+
+	    color: white;
+	    background-color: #4285f4;
+	 }
+	 #nav-toggler{
+		color: #4285f4;
+	    font-size: 4rem;
+
+	}
+	 #nav-left{
+		background-color: white;
+		color: #4285f4;
+		font-size: 3.2rem;
+		font-weight: bold;
+		padding: 4%;
+		padding-right: 10%;
+		margin-right: 10%;
+	 }
+	#nav-left-home{
+		background-color: white;
+		color: #4285f4;
+		font-size: 3.2rem;
+		font-weight: bold;
+		padding: 4%;
+		padding-right: 10%;
+		margin-bottom: 1%;
+		margin-right: 15%;
+		
+	}
+
+	#user-name{
+		font-size: 3rem;
+		font-weight: bold;
+		margin-left: 2%;
+		color: #4285f4;
+	}
+	#user-icon{
+		font-size: 3.2rem;
+		padding: 3%;
+		margin-left: 14%;
+		color: #4285f4;
+
+	}
+
+	 #mymenu{
+		margin-top: 3.1%;
+		background-color: white;
+		padding: 5%;
+		padding-top: 5%;
+		padding-bottom: 5%;
+		}
+
+	 #home-icon
+	{
+		font-size: 2.5rem;
+		margin-left: 20%;
+		margin-top: 3%;
+		padding-right: 0%;
+		float: left;
+
+	}
+
+	#nav-notification{
+		color: #4285f4;
+		font-size: 3.4rem;
+		height: 6rem;
+		left: 100px;
+	}
+
+	 .count{
+		 font-size: 1.5rem;
+		 color: black;
+	 }
+
+	 #in-out{
+		font-size: 2.5rem;
+		font-weight: bold;
+
+		
+	}
+	#in-out-icon{
+
+		font-size: 2.2rem;
+		padding-right: 5%;
+		margin-bottom: 3%;
+	}
+
+	#in-out-icon-container
+	{
+		color: #4285f4;
+		background-color: #4285f4;
+		color: white;
+		border-radius: 5px;
+		width: 17rem;
+		padding: 2%;
+		padding-top: 4%;
+		padding-right: 5%;
+		height: 6.5rem !important;
+		margin-left: 0%;
+	}
+	#log-out{
+		font-size: 2.5rem;
+	}
+	#log-out-icon{
+		font-size: 2.5rem;
+		padding: 2%;
+		margin-right: 3%;
+	}
+
+	#log-out-container
+	{
+		background-color: white;
+		color: #4285f4;
+		width: 18rem;
+		height: 6rem;
+		padding: 5%;
+		font-weight: bold;
+		margin-bottom: 5%;
+		border-radius: 1rem;
+	}
+
+	.read-more{
+		color: #4285f4;
+		font-size: 2rem;
+	}
+
+/* ############################  HOME PAGE  ################################## */
+
+	 .title{
+		 font-size: 3.2rem;
+	 }
+
+	 .author-heading{
+		font-size: 2.5rem;
+		margin-left: 1%;
+	 }
+	 .author-name{
+		font-size: 2.3rem;
+		color: black;
+		font-weight: lighter !important;
+	 }
+	 .post-list-date{
+		 font-size: 1.7rem;
+		 font-weight: bold;
+		 margin-right: 3%;
+	 }
+	 .text{
+		
+		 font-size: 3.1rem;
+		 text-align: auto;
+		font-weight: lighter;
+		font-family: 'Lora', serif;
+	 }
+
+/* ######################## PUBLIC POST DETAIL   ############################ */
+
+	.container-post-detail{
+		margin-top: 12%;
+		margin-right: 40%;
+		width: 100px;
+
+	}
+
+	.post-title{
+		font-size: 3.5rem;
+	}
+	.post-author-heading{
+		font-size: 2.7rem;
+	}
+	.post-author-name{
+		padding-left: 1%;
+		font-size: 2.5rem;
+		color: black;
+		font-family: 'Ubuntu', sans-serif;
+		font-family: 'PT Sans', sans-serif;
+		
+	}
+	.post-date-heading{
+		font-size: 2.7rem;
+	}
+	.post-date{
+		padding-left: 1%;
+		font-size: 2.5rem;
+		color: black;
+		font-family: 'Ubuntu', sans-serif;
+		font-family: 'PT Sans', sans-serif;
+	}
+	.post-text{
+		font-size: 3.2rem;
+		text-align: center !important;
+		text-align: justify !important;
+
+		text-indent: 6rem;
+		width: 97%;
+
+	}
+	.cmt-head{
+		font-size: 3rem;
+	}
+	.add-cmt{
+		font-size: 4rem;
+	}
+
+
+				/* ######################## COMMENT ####################### */
+	.cmt-author{
+		font-size: 2.5rem;
+	}
+	.cmt-date{
+		font-size: 2rem;
+		padding: 2%;
+	}
+	.cmt-text{
+		font-size: 3rem;
+
+		margin-top: 2%;
+		margin-bottom: 2%;
+	}
+
+
+/* ################################# POST FORM ########################### */
+
+.container-post-detail{
+	
+	top: -6.5rem;
+	position: relative;
+}
+
+	.post-form-heading{
+		font-size: 4rem !important;
+		font-weight: bold;
+		text-align: left !important;
+
+		margin-bottom: 3%;
+		margin-top: 9rem;
+		right: -100px ;
+	}
+
+	.form-left{
+		font-size: 2.8rem !important;
+		margin-left: 2%;
+		font-weight: bold;
+
+	}
+
+	#form-control-custom{
+	margin-left: 1%;
+	margin-top: 3%;
+	font-size: 3rem !important;
+	width: 55rem !important;
+	height: 6rem;
+	color: black;
+
+
+
+	}
+
+	#form-control-custom-text{
+		margin-left: 1%;
+		margin-top: 4%;
+		font-size: 2.5rem;
+		height: 40rem;
+		color: black;
+		width: 55rem !important;
+
+
+	}
+
+	#save{
+		width: 38rem;
+		height: 8rem;
+		font-size: 2.5rem;
+	
+		margin-left: 8rem;
+		
+	}
+/* #################################  MY POST LIST ########################### */
+	.alert-custom{
+		margin-left: 5%;
+		height: 50rem;
+		width: 50rem;
+		border-radius: 1rem !important;
+		font-size: 5rem;
+		margin: 0 auto !important;
+		box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.add-new-post{
+		padding: 5% !important;
+		height: 10rem !important;
+		width: 35rem !important;
+		margin-right: 10% !important;
+		text-align: center !important;
+		margin: 0 auto !important;
+		margin-top: 10% !important;
+		font-size: 3rem !important;
+		box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+		border-radius: .5rem !important;
+	}
+	.your-post {
+		text-align: center !important;
+	font-size: 5rem;
+	color: #4285f4;
+	text-align: left;
+	font-weight: bold;
+	font-family: 'PT Sans', sans-serif;
+		color: black;;
+	padding-bottom: 5%;
+
+	}
+
+	.my-post-container{		
+		top: -4rem;
+		position: relative;
+	}
+
+/* #################################  MY POST DETAIL ########################### */
+
+	.my-post-detail-title{
+		font-size: 3.5rem;
+		font-weight: bold;
+		color: #4285f4;
+		color: black;
+		font-weight: bold;
+
+	}
+	.my-post-detail-date-heading{
+		color: #4285f4;
+		color: black;
+		font-weight: bold;
+		font-family: 'Ubuntu', sans-serif;
+		font-size: 2.2rem;
+	}
+	.my-post-detail-post-date{
+		font-size: 2rem;
+		color: black;
+		font-family: 'Ubuntu', sans-serif;
+		text-shadow: .5px 1px 1px rgb(189, 188, 188);
+		top: -30rem ;
+	}
+	.text-area{
+		height: 45rem !important;
+	}
+
+	 .my-post-detail-delete{
+		width: 30rem !important;
+		height: 8rem !important;
+		font-size: 2.2rem !important;
+		float: left !important;
+		top: -10rem;
+		padding-top: 4% !important;
+		width: 22rem !important;
+		margin-top: 25% !important;
+	}
+
+	.my-post-detail-edit{
+		width: 30rem !important;
+		height: 8rem !important;
+		font-size: 2.2rem !important;
+
+		top: -10rem;
+		padding-top: 4% !important;
+		width: 22rem !important;
+		margin-top: 25% !important;
+	}
+
+	.my-post-detail-publish{
+
+		margin-right: 12% !important;
+		width: 40rem !important;
+		height: 9rem !important;
+		padding-top: 5% !important;
+		font-size: 2.5rem !important;
+		top: 15rem;
+	}
+
+	.my-post-detail-comments{
+
+		width: 25rem !important;
+		height: 9rem !important;
+		padding-top: 5% !important;
+		font-size: 2.5rem !important;
+		bottom: 8rem;
+		left: 12rem;
+		margin-top: 2% !important;
+		border-radius: 5rem !important;
+
+	}
+
+	/* ################################## DRAFTS ################################# */
+
+	.your-draft-list{
+		
+		font-size: 5rem;
+		color: #4285f4;
+		text-align: left;
+		font-weight: bold;
+		font-family: 'PT Sans', sans-serif;
+		text-decoration: underline;
+		padding-bottom: 3%;
+		color: #3a3c3f;
+		}
+
+		#draft-list{
+
+		}
+		.draft-created-on{
+			padding-left: 2%;
+		}
+
+		.draft-text{
+			padding-left: 2%;
+		}
+
+	 .draft-publish{
+		width: 18rem;
+		height: 8rem;
+		margin-right: 3% !important;
+		padding-top: 4% !important;
+		font-size: 2rem !important;
+		margin-top: 4% !important;
+	}
+	.draft-delete{
+		width: 15rem;
+		height: 8rem;
+		margin-right: 3% !important;
+		padding-top: 4% !important;
+		font-size: 2rem !important;
+		margin-top: 4% !important;
+	} 
+	.draft-edit{
+		width: 15rem;
+		height: 8rem;
+		margin-right: 3% !important;
+		padding-top: 4% !important;
+		font-size: 2rem !important;
+		margin-top: 4% !important;
+	} 
+	.draft-container{
+		margin-bottom: 26%;
+	}
+	.draft-title{
+
+	}
+	.container-draft-detail{
+
+	}
+
+/* ###############################  DELETE PAGE ###################################### */
+
+	.delete-post{
+		font-size: 5rem;
+		padding-top: 10%;
+		margin-right: 5%;
+	}
+
+	.post-to-delete-title{
+
+		font-size: 5.5rem;	
+
+	}
+	.post-del-icon{
+		width: 30rem;
+		height: 10rem;
+		font-size: 3rem !important;
+		left: -20px;
+		margin-top: 5% !important;
+		margin-bottom: 20% !important;
+	}
+	.post-cancel-icon{
+		width: 30rem;
+		height: 10rem;
+		font-size: 3rem !important;
+		padding: 10% !important;
+		left: -20px;
+	}
+
+
+
+/* ##################################### UPDATE ########################### */
+
+	.update-heading{
+		font-size: 4rem;
+		font-weight: bold;
+	}
+
+	.update-text{
+		font-size: 3.2rem !important;
+		width: 145% !important;
+		height: 80% !important;
+
+	}
+
+	.update-save{
+		width: 40rem !important;
+		height: 10rem !important;
+		font-size: 4rem !important;
+		font-weight: bold;
+		margin-top: 4% !important;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(104, 104, 104, 0.19) !important;
+		border-radius: .5rem !important;
+	}
+
+
+	/* ################################# ABOUT ################################################## */
+
+	.about-user-icon{
+		font-size: 30rem;
+	}
+	.about-username{
+		font-size: 3.5rem;
+		margin: 2%;
+		padding-right: 7% !important;
+		text-align: center;
+
+	}
+	.about-name{
+		font-size: 3.8rem;
+		margin: 5%;
+	}
+	#about-posts, #about-drafts{
+		width: 35rem !important;
+		font-size: 3rem;
+		padding-top: 4%;
+		height: 10rem;
+		margin-top: 8%;
+	}
+
+
+/* ######################################  LOGIN FORM ####################################### */
+	.login-head-container{
+
+		margin-left: 7%;
+		width: 90% !important ;
+	}
+	.login-heading {
+		font-size: 5rem !important;
+		display: none;
+	}
+	.login-head-container{
+		display: none;
+	}
+	.login-username, .login-password , .update-left{
+		padding-top: 5% !important;
+		padding-left: 10% !important;
+		display: none;
+
+	}
+
+	.login-username-input,.login-pwd-input{
+		padding-top: 10% !important;
+		padding-left: 5% !important;
+	}
+
+	#login-button , #update-button{
+
+		width: 60%;
+		font-size: 3.2rem;
+		margin-left: 20% !important;
+		padding: 3%;
+		margin: 0 auto;
+		margin-top: 15%;
+	}
+
+
+	.login-row{
+		width: 90%;
+	}
+	.login-input, .update-input{
+		outline: thin;
+		border: 1px solid black !important;
+		border-radius: .1rem !important;
+		outline: thick !important;
+		height:9rem !important;
+		text-align: center !important;
+		margin-top: 10% !important;
+		font-size: 2rem !important;
+		font-weight: bold !important;
+	}
+
+	.login-alert{
+		margin-top: 25%;
+		font-size: 3rem;
+
+	}
+
+
+/* ############################### SIGN UP #################################### */
+	.sign-success{
+		color: black;
+		margin-top: 5% !important;
+		padding-top: 30% !important;
+		font-size: 4rem;
+		text-align: center;
+		margin:0 auto;
+		box-shadow: none;
+	}
+	#signed-login{
+		font-size: 3rem !important;
+		font-weight: bold;
+		width: 60%;
+		margin: 10%;
+		padding: 3%;
+		text-align: center !important;
+
+	}
+	.signup-row{
+		width: 80%;
+	}
+	.signup-head-container{
+		text-align: center;
+		left: 5rem;
+		padding-bottom: 5%;
+	}
+	.signup-heading{
+		font-size: 4rem !important;
+
+	}
+	.signup-head-container{
+
+	}
+	.signup-left{
+		display: none;
+	}
+	.signup-form-input{
+
+		border-bottom: 1px solid black !important;
+		margin-left: 10% !important;
+		height: 8rem !important;
+		padding-left: 10% !important;
+		margin: 6%;
+		width: 130% !important;
+		border-radius: 0px !important;
+	}
+	#form-control-custom-cfm-pwd{
+		margin-left: 1%;
+		margin-top: 3%;
+		font-size: 3rem !important;
+		width: 135%;
+		height: 8rem;
+		color: black;
+		background-color: whitesmoke;
+		background-color: white;
+	}
+
+	#signup-button{
+		width: 60%;
+		font-size: 3rem;
+		margin-left: 20% !important;
+		padding: 2.5%;
+		margin-top: 1% !important;
+		margin-bottom: 5% !important;
+		margin: 0 auto;
+
+	}
+	.signup-alert{
+		font-size: 2.5rem;
+		width: 250% !important;
+		padding: 5% !important;
+		margin-left: 35%;
+		text-align: center;
+	}
+
+
+/* ################################## UPDATE #######################################	 */
+	.update-heading{
+		font-size: 3.5rem !important;
+		text-align: center;
+		margin-left: 4%;
+	}
+
+	.update-head-container{
+		top: -2rem;
+		margin-left: 5%;
+	}
+/* 
+	################################## ADD COMMENT ####################################### */
+
+	.add-cmt-heading{
+		font-size: 4rem;
+	}
+	.comment-form-left{
+		display: none;
+	}
+	.comment-text{
+
+		height: 40rem !important;
+		width: 145% !important;
+	}
+
+	.add-comment-button{
+		margin: auto !important;
+	}
+	.cmt-instruction{
+		font-size: 3rem;
+		width: 80%;
+		margin-top: 5% !important;
+		margin: auto;
+		padding: 5% !important;
+	}
+
+/* ################################# UNAPPROVED COMMENTS ################################ */
+
+	.unapproved-comments-container{
+		margin-bottom: 7%;	
+		font-family: 'PT Sans', sans-serif !important;
+	}
+
+	.unapproved-cmt-title-left{
+		font-size: 3rem;
+	}
+	.unapproved-cmt-title{
+		font-size: 3rem;
+		color: black !important;
+		font-weight: bold;
+	}
+
+	.unapproved-comment-author-heading{
+		font-size: 3rem;
+		font-family: 'PT Sans', sans-serif;
+
+	}
+	.unapproved-comment-author-name{
+		font-size: 3rem;
+		font-family: 'PT Sans', sans-serif;
+
+	}
+	.unapproved-comment-date{
+		font-size: 2rem;
+	}
+	.unapproved-comment-text{
+		text-align: justify;
+		margin-left: 1%;
+		font-size: 3.5rem;
+		font-family: 'Ubuntu', sans-serif;
+		font-family: 'PT Sans', sans-serif;
+	}
+	.un-app-rem{
+		padding-right: 5% !important;
+	}
+	.un-approve-comment{
+		margin-right: 3% !important;
+	}
+	.un-remove-comment{
+		float: left;
+	}
+	.un-remove-comment,	.un-approve-comment{
+		width: 20rem;
+		height: 7rem;
+		margin-right: 3% !important;
+		padding-top: 3.5% !important;
+		font-size: 2rem !important;
+		margin-top: 4% !important;
+		box-shadow: none !important;
+	}
+
+	/* ############################## COMMENT LIST ###################################### */
+	.comment-list-head{
+		font-size: 3.2rem;
+		text-shadow: none !important;
+
+		color: black;
+	}
+
+	.comment-list-author{
+		display: none;
+	}
+	.comment-list-author-name{
+		font-size: 3rem;
+		color: #4285f4;
+		font-weight: bold !important;
+	}
+	.comment-list-date{
+		color: black;
+		font-size: 2.1rem;
+	}
+
+	.comment-list-text{
+		font-size: 3.5rem !important;	
+	}
+	.comment-list-approved{
+		font-size: 2.2rem;
+	}
+	.comment-list-container{
+		margin-bottom: 15%;	
+	}
+	.comment-list-remove , .comment-list-approve{
+		width: 20rem;
+		height: 7rem;
+		margin-right: 3% !important;
+		padding-top: 4% !important;
+		font-size: 2rem !important;
+		margin-top: 4% !important;
+		}
+
+/* ############################################################################################## */
+	.alert-no-notification{
+
+		height: 120%;
+		font-size: 4.2rem;
+		padding: 11% !important;
+		box-shadow: none;
+	}
+	.no-comments{
+		margin-top: 15% !important;
+		height: 120%;
+		font-size: 5rem;
+		padding: 1% !important;
+		box-shadow: none;
+
+	}
+}

@@ -1,0 +1,73 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<br><br><br><br>
+<div class="container about-custom-container">
+
+    <i class="fas fa-user-circle about-user-icon" ></i>
+<br>
+
+<div class="container about-username">
+    @{{ user.username }}
+</div>
+
+
+
+<div class="container about-container">
+
+<br>
+    <p class="about-name" >
+        {{ user.first_name | upper }} {{ user.last_name | upper }} 
+        <a href="{% url 'edit-user' %}" class="name-edit">
+            <i class="fas fa-pencil-alt"  id="about-edit"></i>
+        </a>
+    </p>
+
+</div>
+
+<p>
+
+    {% if posts == 1 %}
+
+    <a class="btn btn-primary" href="{% url 'list-posts' %}" id="about-posts">
+        {{ posts }}  POST</a>
+
+    {% elif posts > 1%}
+
+    <a class="btn btn-primary" href="{% url 'list-posts' %}" id="about-posts">
+        {{ posts }}  POSTS</a>
+
+    {% else %}
+
+    <a class="btn btn-primary" href="{% url 'list-posts' %}" id="about-posts">
+        NO POST</a>
+
+    {% endif %}
+
+</p>
+
+<p>
+
+{% if drafts == 1 %}
+
+<a class="btn btn-primary" href="{% url 'drafts' %} " id="about-drafts">
+        {{ drafts }} DRAFT</a>
+
+{% elif drafts > 1%}
+
+<a class="btn btn-primary" href="{% url 'drafts' %}" id="about-drafts">
+    {{ drafts }} DRAFTS</a>
+
+{% else %}
+<a class="btn btn-primary" href="{% url 'drafts' %}" id="about-drafts">
+       NO DRAFT</a>
+
+{% endif %}
+
+</p>
+
+
+</div>
+
+
+{% endblock %}
